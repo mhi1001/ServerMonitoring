@@ -1,0 +1,24 @@
+{
+    "4CE0460D0G": {
+        "ipAddress": "10.42.128.101",
+        "powerAverage": "65",
+        "powerMax": "100",
+        "powerMin": "65",
+        "powerPresent": "67",
+        "powerStatus": "ON",
+        "productName": "ProLiant BL460c Gen8",
+        "serialNo": "4CE0460D0G",
+        "upTime": "18518"
+    },
+    "CZJK291DA": {
+        "ipAddress": "10.42.128.102",
+        "powerAverage": "89",
+        "powerMax": "500",
+        "powerMin": "30",
+        "powerPresent": "100",
+        "powerStatus": "ON",
+        "productName": "ProLiant DL360 Gen8",
+        "serialNo": "CZJK291DA",
+        "upTime": "18518"
+    }
+}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h1>Servers Information</h1>
+
+    <div id="cards-container">
+        {% for server in serverData %}
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Serial No.: {{ server["serialNo"] }} </h5>
+                    <p class="card-text">IP Address: {{ server["ipAddress"] }}</p>
+                    <p class="card-text">Power Current: {{ server["powerPresent"] }} Watts</p>
+                    <p class="card-text">Power Min: {{ server["powerMin"] }} Watts</p>
+                    <p class="card-text">Power Average: {{ server["powerAverage"] }}  Watts</p>
+                    <p class="card-text">Status: {{ server["powerStatus"] }} </p>
+                    <p class="card-text">Product Name: {{ server["productName"] }} </p>
+
+                    <form action="/servers" id="actions_form" method="post">
+                        <input type="hidden" name="serialNo" value="{{ server['serialNo'] }}"/>
+                        <button type="submit" class="btn btn-success" name="action-button" value="start">Start</button>
+                        <button type="submit" class="btn btn-danger" name="action-button" value="stop">Stop</button>
+                    </form>
+                </div>
+                </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        document.getElementById('start-button').addEventListener('click', function()
+        {
+            send_start_request($(this).data('server-id'))
+        });
+    
+        document.getElementById('stop-button').addEventListener('click', function()
+        {
+            send_stop_request($(this).data('server-id'))
+        });
+    </script>
+
+{% endblock %}
